@@ -22,7 +22,21 @@ router.get("/add/:a/:b", async function (req, res) {
 });
 
 router.get("/res/:a/:b", async function (req, res) {
-    return res.send({ result: "No implementado" });
+    const params = req.params;
+    const a = Number(params.a);
+    const b = Number(params.b);
+    const result = a - b;
+
+    await Operation.create({
+        type: "RES",
+        args : {
+            a: a,
+            b: b,
+        },
+        result,
+    });
+
+    return res.send({ result });
 });
 
 router.get("/mul/:a/:b", async function (req, res) {
