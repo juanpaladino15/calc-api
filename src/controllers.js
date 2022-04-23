@@ -97,6 +97,7 @@ router.get("/pow/:a/:b", async function (req, res) {
     return res.send({ result });
 });
 
+
 router.get("/history", async function (req, res) {
     return res.send({ result: "No implementado" });
 });
