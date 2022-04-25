@@ -25,7 +25,7 @@ router.get("/res/:a/:b", async function (req, res) {
     const params = req.params;
     const a = Number(params.a);
     const b = Number(params.b);
-    const result = a - b;
+    const result = a + b;
 
     await Operation.create({
         type: "RES",
